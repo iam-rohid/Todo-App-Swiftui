@@ -21,7 +21,7 @@ struct TodoListView: View {
                     })
                 }
             }
-            .onDelete(perform: todoListVM.moveItemToTrash)
+            .onDelete(perform: todoListVM.deleteItem)
             .onMove(perform: todoListVM.moveItem)
         }
         .navigationTitle("Todo List")
