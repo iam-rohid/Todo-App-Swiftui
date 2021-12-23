@@ -6,10 +6,31 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct TodoModel: Identifiable {
-    var id: String = UUID().uuidString
-    var title: String = ""
-    var isCompleted: Bool = false
-    var isImportant: Bool = false
+    let id: String
+    let title: String
+    let isCompleted: Bool
+    let isImportant: Bool
+    
+    init(id: String = UUID().uuidString, title: String, isCompleted: Bool = false, isImportant: Bool = false){
+        self.id = id
+        self.title = title
+        self.isCompleted = isCompleted
+        self.isImportant = isImportant
+    }
+    
+    func toggleImportant(value: Bool? = nil) -> TodoModel{
+        return TodoModel(id: id, title: title, isCompleted: isCompleted, isImportant: value ?? !isImportant)
+    }
+    
+    func toggleCompoleted(value: Bool? = nil) -> TodoModel{
+        print("Working")
+        return TodoModel(id: id, title: title, isCompleted: value ?? !isCompleted, isImportant: isImportant)
+    }
+    
+    func changeTitle(value: String) -> TodoModel{
+        return TodoModel(id: id, title: value, isCompleted: isCompleted, isImportant: isImportant)
+    }
 }

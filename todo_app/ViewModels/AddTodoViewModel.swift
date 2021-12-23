@@ -8,8 +8,7 @@
 import Foundation
 
 class AddTodoViewModel: ObservableObject {
-    @Published var id: String?
-    @Published var todo: TodoModel = TodoModel(id: UUID().uuidString, title: "")
+    @Published var titleText: String = ""
     @Published var showAlert:Bool = false
     @Published var alert: AlertModel = AlertModel(title: "", messege: "")
     
@@ -19,18 +18,18 @@ class AddTodoViewModel: ObservableObject {
     }
     
     func canSave() -> Bool{
-        if todo.title.isEmpty{
+        if titleText.isEmpty{
             showAlert( alert: AlertModel(title: "Empty Todo", messege: "Can not add empty todo!!! 😵"))
             return false
         }
-        else if todo.title.count < 3 {
+        else if titleText.count < 3 {
             showAlert( alert: AlertModel(title: "Short Todo", messege: "Todo must be atleast 3 characters long!!! 😵"))
             return false
         }
         return true
     }
     
-    func getTodo() -> TodoModel {
-        return todo
+    func getTodo(id: String = UUID().uuidString) -> TodoModel {
+        return TodoModel(id: id, title: titleText, isCompleted: false, isImportant: false)
     }
 }

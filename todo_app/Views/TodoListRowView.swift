@@ -13,9 +13,7 @@ struct TodoListRowView: View {
     var body: some View {
         HStack {
             Button (action: {
-                var newData = todo
-                newData.isCompleted.toggle()
-                onChange(newData)
+                onChange(todo.toggleCompoleted(value: nil))
             }, label: {
                 Image(systemName: todo.isCompleted ? "checkmark.circle" : "circle")
                     .foregroundColor(todo.isCompleted ? .green : Color(UIColor.placeholderText))

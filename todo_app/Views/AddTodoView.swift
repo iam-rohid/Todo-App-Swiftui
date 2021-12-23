@@ -16,7 +16,7 @@ struct AddTodoView: View {
     var body: some View {
         VStack{
             ScrollView{
-                TextField("My Todo", text: $addTodoVM.todo.title)
+                TextField("My Todo", text: $addTodoVM.titleText)
                     .padding()
                     .background(Color(UIColor.secondarySystemBackground))
                     .cornerRadius(12)
@@ -39,11 +39,10 @@ struct AddTodoView: View {
         .navigationTitle(id != nil ? "Update Todo" : "Add Todo")
         .alert(isPresented: $addTodoVM.showAlert, content: getAlert)
         .onAppear(perform: {
-            addTodoVM.id = id
             if id != nil{
                 let todo = todoListViewModel.getItem(id: id!)
                 if todo != nil {
-                    addTodoVM.todo = todo!
+                    addTodoVM.titleText = todo!.title
                 }
             }
         })
@@ -55,7 +54,7 @@ struct AddTodoView: View {
     
     func saveTodo(){
         if addTodoVM.canSave(){
-            todoListViewModel.addItem(item: addTodoVM.getTodo())
+            todoListViewModel.addItem(item: addTodoVM.getTodo(id: id ?? UUID().uuidString))
             presentationMode.wrappedValue.dismiss()
         }
     }

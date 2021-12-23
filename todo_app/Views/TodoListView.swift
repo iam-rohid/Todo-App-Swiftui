@@ -13,13 +13,9 @@ struct TodoListView: View {
     var body: some View {
         List{
             ForEach(todoListVM.todoItems) {item in
-                NavigationLink(destination: {
-                    AddTodoView(id: item.id)
-                }){
-                    TodoListRowView(todo: item, onChange: {newTodo in
-                        todoListVM.updateTodo(item: newTodo)
-                    })
-                }
+                TodoListRowView(todo: item, onChange: {newTodo in
+                    todoListVM.updateTodo(item: newTodo)
+                })
             }
             .onDelete(perform: todoListVM.deleteItem)
             .onMove(perform: todoListVM.moveItem)
