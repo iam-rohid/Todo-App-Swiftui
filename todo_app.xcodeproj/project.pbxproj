@@ -7,18 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F81B91752774F47100336ACF /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81B91742774F47100336ACF /* AddTodoView.swift */; };
+		F81B9179277520F800336ACF /* AddTodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81B9178277520F800336ACF /* AddTodoViewModel.swift */; };
+		F81B917B277525C200336ACF /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81B917A277525C200336ACF /* AlertModel.swift */; };
 		F85C10262774E67000C5E5FD /* todo_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85C10252774E67000C5E5FD /* todo_appApp.swift */; };
 		F85C10282774E67000C5E5FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85C10272774E67000C5E5FD /* ContentView.swift */; };
 		F85C102A2774E67200C5E5FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F85C10292774E67200C5E5FD /* Assets.xcassets */; };
 		F85C102D2774E67200C5E5FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F85C102C2774E67200C5E5FD /* Preview Assets.xcassets */; };
+		F85C10372774EA1E00C5E5FD /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85C10362774EA1E00C5E5FD /* TodoListView.swift */; };
+		F85C10392774EA2A00C5E5FD /* TodoListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85C10382774EA2A00C5E5FD /* TodoListRowView.swift */; };
+		F85C103B2774EAA300C5E5FD /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85C103A2774EAA200C5E5FD /* TodoModel.swift */; };
+		F85C103D2774EB0800C5E5FD /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85C103C2774EB0800C5E5FD /* TodoListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F81B91742774F47100336ACF /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
+		F81B9178277520F800336ACF /* AddTodoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTodoViewModel.swift; sourceTree = "<group>"; };
+		F81B917A277525C200336ACF /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		F85C10222774E67000C5E5FD /* todo_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todo_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85C10252774E67000C5E5FD /* todo_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todo_appApp.swift; sourceTree = "<group>"; };
 		F85C10272774E67000C5E5FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F85C10292774E67200C5E5FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F85C102C2774E67200C5E5FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F85C10362774EA1E00C5E5FD /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
+		F85C10382774EA2A00C5E5FD /* TodoListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListRowView.swift; sourceTree = "<group>"; };
+		F85C103A2774EAA200C5E5FD /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
+		F85C103C2774EB0800C5E5FD /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodoListViewModel.swift; path = todo_app/ViewModels/TodoListViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +65,9 @@
 		F85C10242774E67000C5E5FD /* todo_app */ = {
 			isa = PBXGroup;
 			children = (
+				F85C10352774E9F500C5E5FD /* Models */,
+				F85C10342774E9E900C5E5FD /* ViewModels */,
+				F85C10332774E9E000C5E5FD /* Views */,
 				F85C10252774E67000C5E5FD /* todo_appApp.swift */,
 				F85C10272774E67000C5E5FD /* ContentView.swift */,
 				F85C10292774E67200C5E5FD /* Assets.xcassets */,
@@ -65,6 +82,34 @@
 				F85C102C2774E67200C5E5FD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F85C10332774E9E000C5E5FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F85C10362774EA1E00C5E5FD /* TodoListView.swift */,
+				F85C10382774EA2A00C5E5FD /* TodoListRowView.swift */,
+				F81B91742774F47100336ACF /* AddTodoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F85C10342774E9E900C5E5FD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F85C103C2774EB0800C5E5FD /* TodoListViewModel.swift */,
+				F81B9178277520F800336ACF /* AddTodoViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F85C10352774E9F500C5E5FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F85C103A2774EAA200C5E5FD /* TodoModel.swift */,
+				F81B917A277525C200336ACF /* AlertModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +184,13 @@
 			files = (
 				F85C10282774E67000C5E5FD /* ContentView.swift in Sources */,
 				F85C10262774E67000C5E5FD /* todo_appApp.swift in Sources */,
+				F81B91752774F47100336ACF /* AddTodoView.swift in Sources */,
+				F85C10392774EA2A00C5E5FD /* TodoListRowView.swift in Sources */,
+				F81B9179277520F800336ACF /* AddTodoViewModel.swift in Sources */,
+				F85C103B2774EAA300C5E5FD /* TodoModel.swift in Sources */,
+				F85C103D2774EB0800C5E5FD /* TodoListViewModel.swift in Sources */,
+				F81B917B277525C200336ACF /* AlertModel.swift in Sources */,
+				F85C10372774EA1E00C5E5FD /* TodoListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
