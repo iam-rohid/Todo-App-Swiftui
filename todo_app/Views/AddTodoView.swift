@@ -36,7 +36,7 @@ struct AddTodoView: View {
                 })
         }
         .padding()
-        .navigationTitle("Add Todo")
+        .navigationTitle(id != nil ? "Update Todo" : "Add Todo")
         .alert(isPresented: $addTodoVM.showAlert, content: getAlert)
         .onAppear(perform: {
             addTodoVM.id = id
